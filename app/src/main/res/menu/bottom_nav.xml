@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/chat"
+        android:iconTint="@color/white"
+        android:icon="@drawable/balloon_chat_conversation_speak_word_icon"
+        android:title="Chat"/>
+
+
+    <item
+        android:id="@+id/friends"
+        android:title="Friend"
+        android:iconTint="@color/white"
+        android:icon="@drawable/friend_group_people_peoples_team_icon" />
+</menu>

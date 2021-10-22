@@ -3,7 +3,7 @@ package kr.or.mrhi.wechat;
 import java.util.ArrayList;
 
 public class UserData {
-    private String Userid; //프라이머리키
+    private String userid; //프라이머리키
     private String password;
     private String name;
     private String phoneNumber;
@@ -11,6 +11,7 @@ public class UserData {
     private String address;
     private String photoUrl;
     private String getFriends; // 친구목록
+    private String firstJoin;
     private ArrayList<BoardData> getWrited; //작성한 게시판 가져오기
 
 }
