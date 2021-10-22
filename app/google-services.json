@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "317605836330",
+    "project_id": "wechat-5dd8d",
+    "storage_bucket": "wechat-5dd8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317605836330:android:00e3f543471e3520753553",
+        "android_client_info": {
+          "package_name": "kr.or.mrhi.wechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317605836330-57b30ikj436nd42uv19kmok6fr3miqlr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.or.mrhi.wechat",
+            "certificate_hash": "bf986d457ae4f10b8c1796c7e2f76e973a4185c6"
+          }
+        },
+        {
+          "client_id": "317605836330-8fhrci1q4kj6hfhvabrhijt7lqfru4e4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYgBMXWTkhZPYTi1jrl8W8fb-5w5tpiuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317605836330-8fhrci1q4kj6hfhvabrhijt7lqfru4e4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
