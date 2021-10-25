@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivProfile"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -33,12 +33,13 @@
             android:layout_height="23dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="160dp"
             android:text="아이디"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.031"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/ivProfile"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -51,21 +52,22 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvId"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.277" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvWrite"
             android:layout_width="268dp"
             android:layout_height="48dp"
-            android:layout_marginStart="10dp"
             android:layout_marginBottom="4dp"
+            android:background="#EDD0A5"
             android:text="본문내용"
             android:textColor="#4E4D4D"
-            android:background="#EDD0A5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.407"
-            app:layout_constraintStart_toEndOf="@+id/imageView" />
+            app:layout_constraintStart_toEndOf="@+id/ivProfile" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -60,7 +60,7 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
     }
     @Override
     public void onBackPressed() {
-        if(etWrite != null){
+        if(etWrite.getText().toString() != null){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("작성중인 글이 있습니다. 돌아가시겠습니까?");
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
