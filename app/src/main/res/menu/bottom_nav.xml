@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/chat"
-        android:iconTint="@color/white"
+        android:iconTint="#7D3DF1"
         android:icon="@drawable/balloon_chat_conversation_speak_word_icon"
         android:title="Chat"/>
 
@@ -10,6 +10,6 @@
     <item
         android:id="@+id/friends"
         android:title="Friend"
-        android:iconTint="@color/white"
+        android:iconTint="#7D3DF1"
         android:icon="@drawable/friend_group_people_peoples_team_icon" />
 </menu>

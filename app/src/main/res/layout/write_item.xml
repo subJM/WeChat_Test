@@ -62,7 +62,7 @@
             android:layout_marginBottom="4dp"
             android:text="본문내용"
             android:textColor="#4E4D4D"
-            android:background="#FFF59D"
+            android:background="#EDD0A5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.407"

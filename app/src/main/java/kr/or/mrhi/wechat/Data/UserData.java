@@ -1,4 +1,4 @@
-package kr.or.mrhi.wechat;
+package kr.or.mrhi.wechat.Data;
 
 import java.util.ArrayList;
 
@@ -13,5 +13,7 @@ public class UserData {
     private String getFriends; // 친구목록
     private String firstJoin;
     private ArrayList<BoardData> getWrited; //작성한 게시판 가져오기
+    //리플
+
 
 }
