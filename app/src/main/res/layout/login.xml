@@ -43,6 +43,7 @@
         android:tooltipText="6자리이상 15자이하"
         android:maxLength="15"
         android:maxLines="1"
+        android:password="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmailLogin">

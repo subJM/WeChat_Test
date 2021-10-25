@@ -8,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private FirebaseUser user;
 
     private BottomNavigationView bottomNavigationView;
-
+    private FloatingActionButton goToWrite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,15 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         if (user != null) {
             bottomNavigationView = findViewById(R.id.bottomNavigationView);
             bottomNavigationView.setOnItemSelectedListener(this);
+
+            findViewById(R.id.goToWrite).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, WriteActivity.class);
+                    startActivity(intent);
+                    showToast("Write");
+                }
+            });
 
 
         } else {
@@ -57,24 +68,23 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.chat:
-                showToast("chat");
+                showToast("Chat");
                 break;
             case R.id.friends:
-                showToast("friends");
+                showToast("Friends");
                 break;
             case R.id.message:
-                showToast("message");
+                showToast("Message");
                 break;
             case R.id.build:
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 BuildFragment buildFragment = new BuildFragment();
-                ft.replace(R.id.frameLayout, buildFragment );
+                ft.replace(R.id.frameLayout, buildFragment);
                 ft.commit();
-                showToast("build");
+                showToast("Build");
                 break;
-
         }
 
         return true;
