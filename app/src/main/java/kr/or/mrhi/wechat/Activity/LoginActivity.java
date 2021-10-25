@@ -2,6 +2,7 @@ package kr.or.mrhi.wechat.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,12 +37,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etEmailLogin = findViewById(R.id.etEmailLogin);
         etPasswordLogin = findViewById(R.id.etPasswordLogin);
 
+        defenceKey(etEmailLogin);
+        defenceKey(etPasswordLogin);
+
+
         btnLogin = findViewById(R.id.btnLogin);
         goToSignUp = findViewById(R.id.goToSignUp);
 
         btnLogin.setOnClickListener(this);
         goToSignUp.setOnClickListener(this);
 
+    }
+
+    private void defenceKey(EditText editText) {
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == event.KEYCODE_ENTER)
+                    return true;
+                return false;
+            }
+        });
     }
 
 

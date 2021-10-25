@@ -19,6 +19,7 @@ public class ChatFragment extends Fragment {
         View view= inflater.inflate(R.layout.activity_fragment_chat,container,false);
 
 
+
         return view;
 
     }
