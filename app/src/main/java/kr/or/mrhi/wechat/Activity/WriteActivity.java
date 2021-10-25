@@ -60,7 +60,6 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         if(etWrite != null){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("작성중인 글이 있습니다. 돌아가시겠습니까?");
@@ -70,12 +69,18 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
                     goToMain();
                 }
             });
-            builder.setNegativeButton("취소", null);
+            builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    return;
+                }
+            });
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
         }else {
             goToMain();
         }
+        return;
     }
 
     private void goToMain() {
