@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-
         }
     }
 

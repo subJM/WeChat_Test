@@ -1,5 +1,7 @@
 package kr.or.mrhi.wechat.Activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import kr.or.mrhi.wechat.R;
@@ -44,7 +47,7 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivBack:
-                finish();
+                onBackPressed();
                 break;
             case R.id.ivUpload:
                 break;
@@ -54,5 +57,29 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
         }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if(etWrite != null){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("작성중인 글이 있습니다. 돌아가시겠습니까?");
+            builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    goToMain();
+                }
+            });
+            builder.setNegativeButton("취소", null);
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }else {
+            goToMain();
+        }
+    }
+
+    private void goToMain() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
