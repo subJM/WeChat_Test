@@ -23,7 +23,6 @@ public class DataBase {
     private void getInstance(){
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("message");
-
         mAuth = FirebaseAuth.getInstance();
     }
 

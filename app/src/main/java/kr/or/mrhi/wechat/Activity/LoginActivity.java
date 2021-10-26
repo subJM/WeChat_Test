@@ -56,8 +56,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == event.KEYCODE_ENTER)
+                if (keyCode == event.KEYCODE_ENTER) {
+                    startLogin();
                     return true;
+                }
                 return false;
             }
         });

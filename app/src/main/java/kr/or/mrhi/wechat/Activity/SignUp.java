@@ -25,6 +25,7 @@ public class SignUp extends AppCompatActivity {
     private static final String TAG = "SignUpActivity";
     private FirebaseAuth mAuth;
     private EditText etEmail, etPassword, etPasswordOk;
+    private Button btnLogin;
 
     private long backKeyPressedTime = 0;
     private Toast toast;
@@ -44,7 +45,7 @@ public class SignUp extends AppCompatActivity {
         defenceKey(etPassword);
         defenceKey(etPasswordOk);
 
-        Button btnLogin = findViewById(R.id.btnSignUp);
+        btnLogin = findViewById(R.id.btnSignUp);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,8 +59,10 @@ public class SignUp extends AppCompatActivity {
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == event.KEYCODE_ENTER)
+                if (keyCode == event.KEYCODE_ENTER) {
+                    btnLogin.callOnClick();
                     return true;
+                }
                 return false;
             }
         });
