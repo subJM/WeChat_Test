@@ -13,6 +13,4 @@ public class UserData {
     private String firstJoin; //처음가입한날짜
     private ArrayList<String> friends; // 친구목록
     private String getWrited; //작성한 게시판 아이디
-
-
 }
