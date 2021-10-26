@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
     }
 
@@ -82,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 BuildFragment buildFragment = new BuildFragment();
                 ft.replace(R.id.frameLayout, buildFragment);
                 ft.commit();
-                showToast("Build");
                 break;
         }
 
