@@ -15,20 +15,44 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Logger;
 
+import java.util.ArrayList;
+
+import kr.or.mrhi.wechat.Data.BoardData;
+import kr.or.mrhi.wechat.Data.UserData;
+
 public class DataBase {
     private FirebaseAuth mAuth;
     private FirebaseDatabase database;
-    private DatabaseReference myRef;
+    private DatabaseReference mDatabase;
 
-    private void getInstance(){
+
+    public void getInstance(){
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("message");
         mAuth = FirebaseAuth.getInstance();
     }
-
-    private void login(){
-
-
+    //유저 정보(닉네임, 사진) 수정하기
+    public void updateUser(String userId, String nickName){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        UserData userData = new UserData(userId,nickName);
+        mDatabase.child("user").child(userId).setValue(userData);
     }
+    public void updateUser(
+            String userId, String nickName, String photoUrl){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        UserData userData = new UserData(userId,nickName,photoUrl);
+        mDatabase.child("user").child(userId).setValue(userData);
+    }
+
+    //유저 게시판
+    public void insertBoard(
+            String userId, int writeId, String date, String textWrite, String photoUrl, int favorite){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        ArrayList<BoardData> writeBoard = new ArrayList(userId,writeId,date,textWrite,photoUrl,favorite);
+
+        mDatabase.child("user").child(userId).child("writed").setValue(writeBoard);
+    }
+
+
 
 }
