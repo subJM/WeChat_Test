@@ -40,6 +40,9 @@
         <activity
             android:name=".Activity.WriteActivity"
             android:exported="true"/>
+        <activity
+            android:name=".Activity.ChatFragment"
+            android:exported="true"/>
     </application>
 
 </manifest>

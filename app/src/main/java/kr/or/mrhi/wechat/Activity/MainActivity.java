@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
+            finish();
         }
     }
 
@@ -90,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.frameLayout, fragment);
                 ft.commit();
-                showToast("Build");
                 break;
         }
         return true;

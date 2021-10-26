@@ -42,7 +42,6 @@ public class BuildFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()){
             case R.id.btnLogout:
                 goToLogin(view);
-
                 break;
         }
     }
@@ -50,6 +49,16 @@ public class BuildFragment extends Fragment implements View.OnClickListener {
     private void goToLogin(View view) {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(view.getContext(), LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        getActivity().finish();
+
     }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package kr.or.mrhi.wechat.Data;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BoardData {
@@ -8,6 +9,6 @@ public class BoardData {
     private String date; //작성날짜
     private String textWrite; // 본문 내용
     private int favorite;
-    private int getReply;//리플 아이디 가져오기
+    private ArrayList<Reply> getReply;//리플 아이디 가져오기
 
 }
