@@ -54,6 +54,8 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
             case R.id.tvRegister:
                 break;
             case R.id.ivPhoto:
+
+
                 break;
 
         }
@@ -85,6 +87,8 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
 
     private void goToMain() {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        finish();
     }
 }

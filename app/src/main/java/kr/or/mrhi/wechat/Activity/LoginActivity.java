@@ -43,7 +43,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         defenceKey(etEmailLogin);
         defenceKey(etPasswordLogin);
 
-
         btnLogin = findViewById(R.id.btnLogin);
         goToSignUp = findViewById(R.id.goToSignUp);
 

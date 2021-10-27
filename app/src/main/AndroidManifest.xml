@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.or.mrhi.wechat">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
 
     <application
         android:allowBackup="true"
@@ -42,7 +48,7 @@
             android:name=".Activity.WriteActivity"
             android:exported="true"/>
         <activity
-            android:name=".Activity.ChatFragment"
+            android:name=".Activity.CameraActivity"
             android:exported="true"/>
     </application>
 

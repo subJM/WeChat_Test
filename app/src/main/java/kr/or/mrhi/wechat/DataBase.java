@@ -13,9 +13,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Logger;
+import com.google.firebase.storage.FirebaseStorage;
 
-import java.util.ArrayList;
 
 import kr.or.mrhi.wechat.Data.BoardData;
 import kr.or.mrhi.wechat.Data.UserData;
@@ -36,20 +35,21 @@ public class DataBase {
         UserData userData = new UserData(userId,nickName);
         mDatabase.child("user").child(userId).setValue(userData);
     }
-    public void updateUser(
-            String userId, String nickName, String photoUrl){
+    public void updateUser(String userId, String nickName, String photoUrl){
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+
+
         UserData userData = new UserData(userId,nickName,photoUrl);
         mDatabase.child("user").child(userId).setValue(userData);
     }
 
     //유저 게시판
-    public void insertBoard(
-            String userId, int writeId, String date, String textWrite, String photoUrl, int favorite){
+    public void insertBoard(String userId, int writeId, String date, String textWrite, String photoUrl, int favorite){
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        ArrayList<BoardData> writeBoard = new ArrayList(userId,writeId,date,textWrite,photoUrl,favorite);
-
+        BoardData writeBoard = new BoardData(userId,writeId,date,textWrite,photoUrl,favorite);
         mDatabase.child("user").child(userId).child("writed").setValue(writeBoard);
     }
 
