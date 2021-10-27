@@ -50,6 +50,9 @@
         <activity
             android:name=".Activity.CameraActivity"
             android:exported="true"/>
+        <activity
+            android:name=".Activity.PasswordResetActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

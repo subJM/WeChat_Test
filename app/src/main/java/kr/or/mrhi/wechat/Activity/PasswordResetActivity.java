@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,11 +50,19 @@ public class PasswordResetActivity extends AppCompatActivity {
         String email = textEmail.getText().toString();
 
         if(email.length() > 0) {
-                auth.signInWithEmailLink()
+                auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        showToast("이메일을 보냈습니다.");
+                    }
+                });
         }else {
-            showToast("이메일 또는 비밀번호를 입력해주세요");
+            showToast("이메일을 입력해주세요");
         }
     }
 
+    private void showToast(String message){
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
 
 }

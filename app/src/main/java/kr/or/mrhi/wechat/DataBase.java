@@ -33,26 +33,30 @@ public class DataBase {
     public void updateUser(String userId, String nickName){
         mDatabase = FirebaseDatabase.getInstance().getReference();
         UserData userData = new UserData(userId,nickName);
-        mDatabase.child("user").child(userId).setValue(userData);
+        mDatabase.child("users").child(userId).setValue(userData);
     }
     public void updateUser(String userId, String nickName, String photoUrl){
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        FirebaseStorage storage = FirebaseStorage.getInstance();
+        FirebaseStorage storage = FirebaseStorage.getInstance("gs://wechat-5dd8d.appspot.com/photoUrl");
+
 
 
         UserData userData = new UserData(userId,nickName,photoUrl);
-        mDatabase.child("user").child(userId).setValue(userData);
+        mDatabase.child("users").child(userId).setValue(userData);
     }
 
     //유저 게시판
     public void insertBoard(String userId, int writeId, String date, String textWrite, String photoUrl, int favorite){
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        ++writeId;
         BoardData writeBoard = new BoardData(userId,writeId,date,textWrite,photoUrl,favorite);
-        mDatabase.child("user").child(userId).child("writed").setValue(writeBoard);
+        mDatabase.child("users").child(userId).child("writed").setValue(writeBoard);
     }
 
-
+    public void insertUserProfile(){
+        FirebaseStorage storage = FirebaseStorage.getInstance("gs://wechat-5dd8d.appspot.com/photoUrl");
+    }
 
 }

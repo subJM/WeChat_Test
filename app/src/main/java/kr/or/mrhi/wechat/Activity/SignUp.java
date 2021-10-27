@@ -18,12 +18,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import kr.or.mrhi.wechat.DataBase;
 import kr.or.mrhi.wechat.R;
 
 public class SignUp extends AppCompatActivity {
 
     private static final String TAG = "SignUpActivity";
     private FirebaseAuth mAuth;
+    private DataBase dataBase;
     private EditText etEmail, etPassword, etPasswordOk;
     private Button btnLogin;
 
@@ -36,6 +38,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.sign_up);
         //Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+        dataBase = new DataBase();
 
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
@@ -50,6 +53,8 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 signUp();
+
+                dataBase.insertUserProfile();
             }
         });
 
