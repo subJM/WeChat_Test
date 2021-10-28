@@ -30,12 +30,16 @@
         <entry key="..\:/Users/study/AndroidStudioProjects/WeChat_Test/app/src/main/res/layout/write_item.xml" value="0.2234375" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/drawable/chat_sharpe.xml" value="0.46296296296296297" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/drawable/message_24.xml" value="0.46296296296296297" />
+        <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/activity_Init_member.xml" value="0.4391634980988593" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/activity_fragment_chat.xml" value="0.48333333333333334" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/activity_fragment_management.xml" value="0.48333333333333334" />
+        <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/activity_info_member.xml" value="0.4875" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/activity_update_member.xml" value="0.33" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/activity_write.xml" value="0.48333333333333334" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/login.xml" value="0.48333333333333334" />
-        <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/sign_up.xml" value="0.48333333333333334" />
+        <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/login_reset.xml" value="0.4875" />
+        <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/sign_up.xml" value="0.33" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/layout/write_item.xml" value="0.48333333333333334" />
         <entry key="..\:/Users/thswh/Desktop/teamOne/WeChat_Test/app/src/main/res/menu/bottom_nav.xml" value="0.48333333333333334" />
       </map>

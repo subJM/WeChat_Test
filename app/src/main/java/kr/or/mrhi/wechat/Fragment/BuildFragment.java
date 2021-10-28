@@ -15,12 +15,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import kr.or.mrhi.wechat.Activity.LoginActivity;
+import kr.or.mrhi.wechat.Activity.MainActivity;
+import kr.or.mrhi.wechat.Activity.UserInfoActivity;
 import kr.or.mrhi.wechat.R;
 
 public class BuildFragment extends Fragment implements View.OnClickListener {
     private FirebaseAuth auth;
     private FirebaseUser user;
-    private Button btnLogout;
+    private Button btnLogout,gotoUserInfo;
 
 
     @Nullable
@@ -31,8 +33,11 @@ public class BuildFragment extends Fragment implements View.OnClickListener {
         if(user == null){
 
         }
-
+        gotoUserInfo = view.findViewById(R.id.gotoUserInfo);
         btnLogout = view.findViewById(R.id.btnLogout);
+
+
+        gotoUserInfo.setOnClickListener(this);
         btnLogout.setOnClickListener(this);
         return view;
     }
@@ -43,6 +48,11 @@ public class BuildFragment extends Fragment implements View.OnClickListener {
             case R.id.btnLogout:
                 goToLogin(view);
                 break;
+            case R.id.gotoUserInfo:
+                Intent intent = new Intent(view.getContext(), UserInfoActivity.class);
+                startActivity(intent);
+                break;
+
         }
     }
 

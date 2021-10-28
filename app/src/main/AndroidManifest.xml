@@ -53,6 +53,9 @@
         <activity
             android:name=".Activity.PasswordResetActivity"
             android:exported="true"/>
+        <activity
+            android:name=".Activity.UserInfoActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

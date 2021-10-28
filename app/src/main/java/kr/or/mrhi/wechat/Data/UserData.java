@@ -3,7 +3,6 @@ package kr.or.mrhi.wechat.Data;
 import java.util.ArrayList;
 
 public class UserData {
-    private String userId; //프라이머리키
     private String nickName;
     private String photoUrl;
     private ArrayList<String> friends; // 친구목록
@@ -14,24 +13,11 @@ public class UserData {
 
     }
 
-    public UserData(String userId,String nickName) {
-        this.userId = userId;
-        this.nickName = nickName;
-    }
-
-    public UserData(String userId,String nickName,String photoUrl) {
-        this.userId = userId;
+    public UserData(String nickName, String photoUrl) {
         this.nickName = nickName;
         this.photoUrl = photoUrl;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
     public String getNickName() {
         return nickName;

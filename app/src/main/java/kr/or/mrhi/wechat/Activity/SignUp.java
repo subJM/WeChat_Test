@@ -1,7 +1,9 @@
 package kr.or.mrhi.wechat.Activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +27,6 @@ public class SignUp extends AppCompatActivity {
 
     private static final String TAG = "SignUpActivity";
     private FirebaseAuth mAuth;
-    private DataBase dataBase;
     private EditText etEmail, etPassword, etPasswordOk;
     private Button btnLogin;
 
@@ -33,34 +34,23 @@ public class SignUp extends AppCompatActivity {
     private Toast toast;
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
         //Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        dataBase = new DataBase();
-
-        etEmail = findViewById(R.id.etEmail);
-        etPassword = findViewById(R.id.etPassword);
-        etPasswordOk = findViewById(R.id.etPasswordOk);
-
-        defenceKey(etEmail);
-        defenceKey(etPassword);
-        defenceKey(etPasswordOk);
+        initStart();
 
         btnLogin = findViewById(R.id.btnSignUp);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signUp();
-
-                dataBase.insertUserProfile();
             }
         });
-
     }
 
-    private void defenceKey(EditText editText) {
+
+    private void defenceKey(@NonNull EditText editText) {
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -73,8 +63,19 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-    private void signUp(){
+    private void initStart() {
+        mAuth = FirebaseAuth.getInstance();
 
+        etEmail = findViewById(R.id.etEmail);
+        etPassword = findViewById(R.id.etPassword);
+        etPasswordOk = findViewById(R.id.etPasswordOk);
+
+        defenceKey(etEmail);
+        defenceKey(etPassword);
+        defenceKey(etPasswordOk);
+    }
+
+    private void signUp(){
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
         String passworkOk = etPasswordOk.getText().toString();
@@ -89,9 +90,10 @@ public class SignUp extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     showToast("회원가입 성공");
-                                    Intent intent = new Intent(SignUp.this , MainActivity.class);
+                                    Intent intent = new Intent(SignUp.this , UserInfoActivity.class);
                                     startActivity(intent);
                                     finish();
+
                                 } else {
                                     if (task.getException() != null) {
                                         // If sign in fails, display a message to the user.
@@ -108,10 +110,6 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_SHORT).show();
-    }
     @Override
     public void onBackPressed() {
         // 기존 뒤로가기 버튼의 기능을 막기위해 주석처리 또는 삭제
@@ -135,4 +133,7 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
+    private void showToast(String message) {
+        Toast.makeText(getApplicationContext(), message,Toast.LENGTH_SHORT).show();
+    }
 }

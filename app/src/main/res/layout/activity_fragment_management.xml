@@ -16,12 +16,20 @@
 
     </LinearLayout>
     <Button
+        android:id="@+id/gotoUserInfo"
+        android:text="정보수정"
+        android:background="#E3E0E0"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"/>
+    <Button
         android:id="@+id/btnLogout"
         android:text="로그아웃"
         android:background="#E3E0E0"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="35dp"/>
+
 
 
 </LinearLayout>
